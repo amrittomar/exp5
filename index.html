@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social Post Composer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+
+    <main class="app-shell">
+      <section class="hero-card">
+        <div>
+          <p class="eyebrow">Creative Studio</p>
+          <h1>Social Media Post Composer</h1>
+          <p class="subtext">
+            Craft vibrant posts for Instagram, Twitter, and LinkedIn with
+            platform-specific word limits and draft saving.
+          </p>
+        </div>
+
+        <div class="platform-grid" id="platformGrid">
+          <button class="platform-pill active" data-platform="Instagram">
+            <span>📸</span>
+            Instagram
+          </button>
+          <button class="platform-pill" data-platform="Twitter">
+            <span>🐦</span>
+            Twitter
+          </button>
+          <button class="platform-pill" data-platform="LinkedIn">
+            <span>💼</span>
+            LinkedIn
+          </button>
+        </div>
+      </section>
+
+      <section class="composer-card">
+        <div class="composer-header">
+          <div>
+            <h2>Compose your post</h2>
+            <p id="platformHint">Instagram limit: 30 words</p>
+          </div>
+          <div class="counter-box">
+            <span id="wordCount">0</span>
+            <small>words</small>
+          </div>
+        </div>
+
+        <label class="field-label" for="postText">Your message</label>
+        <textarea
+          id="postText"
+          placeholder="Type a catchy post here..."
+          rows="8"
+        >✨ New drop alert! Your next big idea deserves a bold spotlight. Share it, spark it, and grow it with confidence.</textarea>
+
+        <div class="warning hidden" id="warningText">
+          ⚠️ Your post exceeds the allowed limit for this platform.
+        </div>
+
+        <div class="button-row">
+          <button id="draftBtn" class="btn btn-secondary">Save to Draft</button>
+          <button id="postBtn" class="btn btn-primary">Make Post</button>
+        </div>
+      </section>
+
+      <section class="draft-card">
+        <div class="draft-header">
+          <h2>Drafts</h2>
+          <span id="draftCount" class="draft-badge">0 saved</span>
+        </div>
+        <div id="draftList" class="draft-list"></div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
